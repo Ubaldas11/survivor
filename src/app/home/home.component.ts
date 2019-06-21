@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FileService } from '../services/file.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  videoUrl: string;
+  constructor(private afStorage: FileService) { }
 
   ngOnInit() {
+    this.afStorage.getVideoUrl('saySomething').subscribe(data => {
+      this.videoUrl = data;
+    });
   }
 
 }
