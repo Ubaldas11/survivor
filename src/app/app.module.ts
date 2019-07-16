@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FileService } from './services/file.service';
     LayoutComponent,
     HomeComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
