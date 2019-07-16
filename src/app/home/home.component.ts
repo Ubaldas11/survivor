@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.afStorage.getVideoUrl('saySomething').subscribe(data => {
       this.videoUrl = data;
+      console.log(this.videoUrl);
     });
   }
 
