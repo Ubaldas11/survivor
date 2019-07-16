@@ -1,5 +1,5 @@
-<div class="gallery" fxFlex="100">
-  <mat-card class="imageCard" fxFlex *ngFor="let img of images">
+<div class="gallery">
+  <div class="imageCard" *ngFor="let img of images">
     <img *ngIf="images" src="{{img}}" class="image">
-  </mat-card>
+  </div>
 </div>
