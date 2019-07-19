@@ -22,7 +22,7 @@ export class PlayersService {
     }));
   }
 
-  public getPlayer(playerId: string): Observable<IPlayer> {
+  public getPlayer(playerId: string): Observable<any> {
     return this.afs.collection('players').doc(playerId).valueChanges();
   }
 

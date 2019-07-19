@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatCardModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { MatVideoModule } from 'mat-video';
@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
 import { PlayersComponent } from './players/players.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PlayersComponent } from './players/players.component';
     HomeComponent,
     HeaderComponent,
     SidenavComponent,
-    PlayersComponent
+    PlayersComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { PlayersComponent } from './players/players.component';
     MatIconModule,
     MatListModule,
     MatVideoModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatCardModule
   ],
   providers: [FileService],
   bootstrap: [AppComponent]
