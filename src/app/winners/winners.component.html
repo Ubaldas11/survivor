@@ -1,8 +1,7 @@
-<div  fxLayout="row" fxLayoutAlign="space-evenly center">
+<div  fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center" fxLayoutGap="20px">
 
-<mat-card class="winner" fxFlex="20">
+<mat-card class="winner" fxFlex="30" fxFlex.xs="80" [ngStyle.xs]="{'width.%': 100}"> 
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Normantas</mat-card-title>
     <mat-card-subtitle>Išgyventojas 2017</mat-card-subtitle>
   </mat-card-header>
@@ -14,9 +13,8 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="winner" fxFlex="20">
+<mat-card class="winner" fxFlex="30" fxFlex.xs="80">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Simona</mat-card-title>
     <mat-card-subtitle>Išgyventoja 2018</mat-card-subtitle>
   </mat-card-header>
@@ -28,13 +26,17 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card class="winner" fxFlex="20">
+<mat-card class="winner" fxFlex="30" fxFlex.xs="80">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Čia galėtum būti tu</mat-card-title>
+    <mat-card-title>Tu</mat-card-title>
     <mat-card-subtitle>Išgyventojas 2019</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="https://cdn4.iconfinder.com/data/icons/political-elections/50/48-512.png" alt="Čia galėtum būti tu">
+  <mat-card-content>
+    <p>
+      Some line.
+    </p>
+  </mat-card-content>
 </mat-card>
 
 </div>
