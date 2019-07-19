@@ -9,12 +9,12 @@ import { FileService } from '../services/file.service';
 export class HomeComponent implements OnInit {
 
   videoUrl: string;
+
   constructor(private afStorage: FileService) { }
 
   ngOnInit() {
     this.afStorage.getVideoUrl('saySomething').subscribe(data => {
       this.videoUrl = data;
-      console.log(this.videoUrl);
     });
   }
 
