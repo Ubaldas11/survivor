@@ -7,7 +7,6 @@ import { FileService } from '../services/file.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  image: string;
   images: Array<string> = [];
 
   constructor(private afStorage: FileService) { }
@@ -19,13 +18,9 @@ export class GalleryComponent implements OnInit {
   getAllPhotos() {
     for (let i = 1; i < 13; i++) {
       this.afStorage.getImgUrl(i).subscribe(data => {
-        console.log(data);
-        this.image = data;
         this.images.push(data);
-        console.log(this.images);
       });
     }
   }
-
 
 }
