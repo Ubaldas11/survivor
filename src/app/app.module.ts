@@ -6,6 +6,7 @@ import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, Mat
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { MatVideoModule } from 'mat-video';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { firebaseConfig } from '../environments/firebase-config';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
+import { PlayersComponent } from './players/players.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { FileService } from './services/file.service';
     LayoutComponent,
     HomeComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { FileService } from './services/file.service';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatVideoModule
+    MatVideoModule,
+    AngularFirestoreModule
   ],
   providers: [FileService],
   bootstrap: [AppComponent]
