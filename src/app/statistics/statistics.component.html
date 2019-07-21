@@ -1,0 +1,19 @@
+<div>
+  <mat-card class='stats-card' *ngFor="let item of stats">
+    <mat-card-title>{{ item.title }}</mat-card-title>
+    <mat-card-content class='stats-item'><p>
+        <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
+      {{ item.value }}
+    </p></mat-card-content>
+  </mat-card>
+  <div class="chart">
+      <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [colors]="pieChartColors"
+        [legend]="pieChartLegend">
+      </canvas>
+    </div>
+</div>
