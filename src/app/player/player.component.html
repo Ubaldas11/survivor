@@ -1,12 +1,16 @@
-<div *ngIf="player" fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="30px">
-  <img src="{{ player.img }}" fxFlex="35" fxFlex.xs="45">
+<div *ngIf="player" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" fxLayoutGap="30px">
+  <img src="{{ player.img }}" fxFlex="35" fxFlex.xs="45" class="playerImg">
   <div fxFlex [ngStyle.xs]="{'font-size.px': 12}">
-    <h2>{{ player.fullName }}</h2>
-    <p>Biografija</p>
+    <h1>{{ player.fullName }}</h1>
     <div>
-      <p>Amžius: </p>
-      <p>Profesija: </p>
+      <p><strong>Amžius:</strong> {{getAge(player.birthdate.toDate())}}</p>
+      <p><strong>Profesija:</strong> {{player.profession}}</p>
     </div>
-    <p *ngFor="let answer of player.questionAnswers"> {{ answer }}</p>
+    <hr/>
+    <div *ngIf="questions">
+      <div *ngFor="let answer of player.questionAnswers; let i = index">
+          <p><strong>{{ questions[i] }}</strong> : {{answer}} </p>
+      </div>
+    </div>
   </div>
 </div>

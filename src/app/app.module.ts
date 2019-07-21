@@ -21,6 +21,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { PlayerComponent } from './player/player.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
+import { PlayersComponent } from './players/players.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ChartsModule } from 'ng2-charts';
     WinnersComponent,
     GalleryComponent,
     PlayerComponent,
+    PlayersComponent,
     StatisticsComponent
   ],
   imports: [
