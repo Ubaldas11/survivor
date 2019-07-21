@@ -18,9 +18,11 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
 import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { PlayersComponent } from './players/players.component';
 import { PlayerComponent } from './player/player.component';
 import { HintsComponent } from './hints/hints.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { ChartsModule } from 'ng2-charts';
+import { PlayersComponent } from './players/players.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { HintsComponent } from './hints/hints.component';
     GalleryComponent,
     PlayersComponent,
     PlayerComponent,
-    HintsComponent
+    HintsComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +51,10 @@ import { HintsComponent } from './hints/hints.component';
     MatIconModule,
     MatListModule,
     MatVideoModule,
+    MatCardModule,
     AngularFirestoreModule,
-    MatCardModule
+    MatCardModule,
+    ChartsModule
   ],
   providers: [FileService],
   bootstrap: [AppComponent]

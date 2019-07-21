@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 import { PlayersComponent } from './players/players.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'gallery', component: GalleryComponent},
   { path: 'players', component: PlayersComponent},
   { path: 'player/:playerId', component: PlayerComponent},
-  { path: 'hints', component: HintsComponent}
+  { path: 'hints', component: HintsComponent},
+  { path: 'statistics', component: StatisticsComponent }
 ];
 
 @NgModule({
