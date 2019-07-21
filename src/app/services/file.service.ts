@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class FileService {
   constructor(private storage: AngularFireStorage) {}
 
-  public getImgUrl(nameWithoutFormat: string): Observable<string> {
+  public getImgUrl(nameWithoutFormat: number): Observable<string> {
     const ref = this.storage.ref(`gallery/${nameWithoutFormat}.jpg`);
     return ref.getDownloadURL();
   }
