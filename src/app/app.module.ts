@@ -18,7 +18,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
 import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { PlayersComponent } from './players/players.component';
 import { PlayerComponent } from './player/player.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
