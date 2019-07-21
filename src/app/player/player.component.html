@@ -1,0 +1,12 @@
+<div *ngIf="player" fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="30px">
+  <img src="{{ player.img }}" fxFlex="35" fxFlex.xs="45">
+  <div fxFlex [ngStyle.xs]="{'font-size.px': 12}">
+    <h2>{{ player.fullName }}</h2>
+    <p>Biografija</p>
+    <div>
+      <p>Amžius: </p>
+      <p>Profesija: </p>
+    </div>
+    <p *ngFor="let answer of player.questionAnswers"> {{ answer }}</p>
+  </div>
+</div>

@@ -6,6 +6,7 @@ import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, Mat
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { MatVideoModule } from 'mat-video';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { firebaseConfig } from '../environments/firebase-config';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
 import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { PlayersComponent } from './players/players.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     SidenavComponent,
     WinnersComponent,
     GalleryComponent
+    PlayersComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     MatIconModule,
     MatListModule,
     MatVideoModule,
+    AngularFirestoreModule,
     MatCardModule
   ],
   providers: [FileService],
