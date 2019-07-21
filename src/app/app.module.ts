@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FileService } from './services/file.service';
+import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     HomeComponent,
     HeaderComponent,
     SidenavComponent,
+    WinnersComponent,
     GalleryComponent
   ],
   imports: [
