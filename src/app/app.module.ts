@@ -20,6 +20,7 @@ import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerComponent } from './player/player.component';
+import { HintsComponent } from './hints/hints.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PlayerComponent } from './player/player.component';
     WinnersComponent,
     GalleryComponent,
     PlayersComponent,
-    PlayerComponent
+    PlayerComponent,
+    HintsComponent
   ],
   imports: [
     BrowserModule,

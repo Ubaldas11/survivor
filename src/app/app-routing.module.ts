@@ -1,3 +1,4 @@
+import { HintsComponent } from './hints/hints.component';
 import { PlayerComponent } from './player/player.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'winners', component: WinnersComponent},
   { path: 'gallery', component: GalleryComponent},
   { path: 'players', component: PlayersComponent},
-  { path: 'player/:playerId', component: PlayerComponent}
+  { path: 'player/:playerId', component: PlayerComponent},
+  { path: 'hints', component: HintsComponent}
 ];
 
 @NgModule({
