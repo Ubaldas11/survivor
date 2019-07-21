@@ -20,6 +20,8 @@ import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerComponent } from './player/player.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,9 @@ import { PlayerComponent } from './player/player.component';
     HeaderComponent,
     SidenavComponent,
     WinnersComponent,
-    GalleryComponent
-    PlayersComponent,
-    PlayerComponent
+    GalleryComponent,
+    PlayerComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +48,10 @@ import { PlayerComponent } from './player/player.component';
     MatIconModule,
     MatListModule,
     MatVideoModule,
+    MatCardModule,
     AngularFirestoreModule,
-    MatCardModule
+    MatCardModule,
+    ChartsModule
   ],
   providers: [FileService],
   bootstrap: [AppComponent]

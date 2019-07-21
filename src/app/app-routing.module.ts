@@ -5,15 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PlayersComponent } from './players/players.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   // further routes to be added
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'winners', component: WinnersComponent},
-  { path: 'gallery', component: GalleryComponent}
+  { path: 'gallery', component: GalleryComponent},
   { path: 'players', component: PlayersComponent},
-  { path: 'player/:playerId', component: PlayerComponent}
+  { path: 'player/:playerId', component: PlayerComponent},
+  { path: 'statistics', component: StatisticsComponent }
 ];
 
 @NgModule({
