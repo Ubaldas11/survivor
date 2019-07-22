@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthService} from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     PlayerComponent,
     PlayersComponent,
     StatisticsComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -4,38 +4,42 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {User} from 'firebase';
 import UserCredential = firebase.auth.UserCredential;
 import {Subject} from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
   public authStatusChanged: Subject<boolean> = new Subject();
   private user: User;
 
-  constructor(private firebaseAuth: AngularFireAuth) {
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
     this.firebaseAuth.authState.subscribe(user => {
       if (user) {
-        this.authStatusChanged.next(true);
         this.user = user;
-        console.log(user);
         localStorage.setItem('user', JSON.stringify(this.user));
+        this.authStatusChanged.next(true);
       } else {
-        this.authStatusChanged.next(false);
+        this.user = null;
         localStorage.setItem('user', null);
+        this.authStatusChanged.next(false);
       }
     });
   }
 
-  public login(credentials: ILogin): void {
-    this.firebaseAuth.auth.signInWithEmailAndPassword(credentials.username, credentials.password).then((response: UserCredential) => {
-    });
+  public getUserInfo(): User {
+    return this.user;
+  }
+
+  public login(credentials: ILogin): Promise<UserCredential> {
+    return this.firebaseAuth.auth.signInWithEmailAndPassword(credentials.username, credentials.password);
   }
 
   public async logout(): Promise<void> {
     await this.firebaseAuth.auth.signOut();
     localStorage.removeItem('user');
+    this.router.navigate(['login']);
   }
 
-  public isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null;
+  public isAuthenticated(): boolean {
+    return JSON.parse(localStorage.getItem('user')) !== null;
   }
 }

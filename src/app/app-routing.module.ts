@@ -7,16 +7,17 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PlayersComponent } from './players/players.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   // further routes to be added
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'winners', component: WinnersComponent},
-  { path: 'gallery', component: GalleryComponent},
-  { path: 'players', component: PlayersComponent},
-  { path: 'players/:playerId', component: PlayerComponent},
-  { path: 'statistics', component: StatisticsComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full', canActivate: [AuthGuard]  },
+  { path: 'winners', component: WinnersComponent, canActivate: [AuthGuard] },
+  { path: 'gallery', component: GalleryComponent, canActivate: [AuthGuard] },
+  { path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
+  { path: 'players/:playerId', component: PlayerComponent, canActivate: [AuthGuard] },
+  { path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard] },
   { path: 'login' , component: LoginComponent}
 ];
 

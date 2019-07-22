@@ -1,24 +1,36 @@
-<div>
-  {{ isAuthenticated }}
-  <form class="login-form" (ngSubmit)="onSubmit()" *ngIf="!isAuthenticated">
+<ng-container *ngIf="!isAuthenticated">
+  <h1>Privalote prisijungti norėdami kasti giliau</h1>
+  <form class="login-form" (ngSubmit)="onSubmit()">
     <mat-form-field class="full-width">
-      <input matInput placeholder="Email" [formControl]="emailFormControl">
-      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-        Enter a valid email address
+      <input matInput placeholder="Email" [formControl]="emailFormControl" />
+      <mat-error
+        *ngIf="
+          emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')
+        ">
+        Nevalidus el. paštas
       </mat-error>
       <mat-error *ngIf="emailFormControl.hasError('required')">
-        Email is <strong>required</strong>
+        El. paštas yra <strong>privalomas</strong>
       </mat-error>
     </mat-form-field>
     <mat-form-field class="full-width">
-      <input matInput placeholder="Password" [formControl]="passwordFormControl" type="password">
+      <input
+        matInput
+        placeholder="Password"
+        [formControl]="passwordFormControl"
+        type="password"
+      />
       <mat-error *ngIf="passwordFormControl.hasError('required')">
-        Password is <strong>required</strong>
+        Slaptažodis yra <strong>privalomas</strong>
       </mat-error>
     </mat-form-field>
     <button type="submit">Login</button>
   </form>
-  <div *ngIf="isAuthenticated">
+  <h2 *ngIf="error" class="login-error">{{ error }}</h2>
+</ng-container>
+<ng-container *ngIf="isAuthenticated">
+  <div>
     <button (click)="logout()">Logout</button>
   </div>
-</div>
+</ng-container>
