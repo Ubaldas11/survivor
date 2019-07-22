@@ -16,7 +16,7 @@ export class GalleryComponent implements OnInit {
   }
 
   getAllPhotos() {
-    for (let i = 1; i < 13; i++) {
+    for (let i = 1; i < 24; i++) {
       this.afStorage.getImgUrl(i).subscribe(data => {
         this.images.push(data);
       });
