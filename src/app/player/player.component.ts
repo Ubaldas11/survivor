@@ -11,8 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PlayerComponent implements OnInit {
   player: IPlayer;
   playerId: string;
-  questions: [
-    'Kurią vietą užėmei praeitame sezone?',
+  questions: Array<string> = [
     'Apibūdink save trimis žodžiais',
     'Mėgstamiausias žaidėjas iš praėjusių sezonų',
     'Jei galėtum pasiimti tik tris dalykus į Jurgio sodybą, kas tai būtų?',
@@ -30,8 +29,12 @@ export class PlayerComponent implements OnInit {
   private getPlayer(playerId: string) {
     this._players.getPlayer(playerId).subscribe(data => {
       this.player = data;
-      console.log(this.player);
     });
   }
 
+  getAge(birthday: Date) { // birthday is a date
+    const ageDifMs = Date.now() - birthday.getTime();
+    const ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
 }

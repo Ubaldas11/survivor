@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatCardModule } from '@angular/material';
+import {
+  MatButtonModule, MatToolbarModule, MatIconModule, MatSidenavModule,
+  MatListModule, MatCardModule, MatFormFieldModule, MatInputModule
+} from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { MatVideoModule } from 'mat-video';
@@ -23,6 +26,11 @@ import { HintsComponent } from './hints/hints.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
 import { PlayersComponent } from './players/players.component';
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthService} from './services/auth.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +44,8 @@ import { PlayersComponent } from './players/players.component';
     PlayersComponent,
     PlayerComponent,
     HintsComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +63,14 @@ import { PlayersComponent } from './players/players.component';
     MatCardModule,
     AngularFirestoreModule,
     MatCardModule,
-    ChartsModule
+    ChartsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    AngularFireAuthModule
   ],
-  providers: [FileService],
+  providers: [FileService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

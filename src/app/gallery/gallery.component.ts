@@ -1,5 +1,7 @@
+import { Image } from './image';
 import { Component, OnInit } from '@angular/core';
 import { FileService } from '../services/file.service';
+import { Observable, forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-gallery',
@@ -7,7 +9,8 @@ import { FileService } from '../services/file.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  images: Array<string> = [];
+  images: Array<Image> = [];
+  downloadTasks: Array<Observable<string>> = [];
 
   constructor(private afStorage: FileService) { }
 
@@ -16,11 +19,19 @@ export class GalleryComponent implements OnInit {
   }
 
   getAllPhotos() {
-    for (let i = 1; i < 13; i++) {
-      this.afStorage.getImgUrl(i).subscribe(data => {
-        this.images.push(data);
+    for (let i = 1; i < 25; i++) {
+      const downloadTask = this.afStorage.getImgUrl(i);
+      this.downloadTasks.push(downloadTask);
+      downloadTask.subscribe(data => {
+        this.images.push({
+          id: i,
+          url: data
+        });
       });
     }
+    forkJoin(this.downloadTasks).subscribe(x => {
+      this.images = this.images.sort((a, b) => a.id - b.id);
+    });
   }
 
 }

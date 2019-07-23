@@ -19,7 +19,6 @@ export class PlayersComponent implements OnInit {
   private getAllPlayers() {
     this._players.getPlayers().subscribe(players => {
       this.players = players;
-      console.log(this.players);
     });
   }
 
