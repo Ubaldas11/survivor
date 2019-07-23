@@ -1,6 +1,12 @@
 .playerCard {
   cursor: pointer !important;
   margin-top: 20px;
+  font-family: 'Shojumaru', cursive;
+}
+
+.playerCard:hover {
+  transform: scale(1.2);
+  z-index: 999;
 }
 
 .player {
