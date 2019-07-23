@@ -1,3 +1,5 @@
+import { IPlayer } from './../models/player.model';
+import { PlayersService } from './../services/players.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WinnersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _players: PlayersService) {
+   }
 
   ngOnInit() {
   }
-
 }

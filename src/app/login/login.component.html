@@ -1,34 +1,30 @@
-<ng-container *ngIf="!isAuthenticated">
-  <h1>Privalote prisijungti norėdami kasti giliau</h1>
-  <form class="login-form" (ngSubmit)="onSubmit()">
-    <mat-form-field class="full-width">
-      <input matInput placeholder="Email" [formControl]="emailFormControl" />
-      <mat-error
-        *ngIf="
+<mat-card *ngIf="!isAuthenticated" class="login">
+  <mat-card-title>Privalote prisijungti norėdami kasti giliau</mat-card-title>
+  <mat-card-content>
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" [formControl]="emailFormControl" />
+        <mat-error *ngIf="
           emailFormControl.hasError('email') &&
           !emailFormControl.hasError('required')
         ">
-        Nevalidus el. paštas
-      </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
-        El. paštas yra <strong>privalomas</strong>
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <input
-        matInput
-        placeholder="Password"
-        [formControl]="passwordFormControl"
-        type="password"
-      />
-      <mat-error *ngIf="passwordFormControl.hasError('required')">
-        Slaptažodis yra <strong>privalomas</strong>
-      </mat-error>
-    </mat-form-field>
-    <button type="submit">Login</button>
-  </form>
+          Nevalidus el. paštas
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          El. paštas yra <strong>privalomas</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" [formControl]="passwordFormControl" type="password" />
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Slaptažodis yra <strong>privalomas</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <button mat-raised-button color="primary" type="submit">Login</button>
   <h2 *ngIf="error" class="login-error">{{ error }}</h2>
-</ng-container>
+</mat-card>
 <ng-container *ngIf="isAuthenticated">
   <div>
     <button (click)="logout()">Logout</button>

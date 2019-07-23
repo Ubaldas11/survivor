@@ -2,6 +2,6 @@
   fxLayoutGap="20px" className="playerCard">
   <mat-card class="playerCard" *ngFor="let player of players" fxFlex="30" fxFlex.sm="45" fxFlex.xs="80" [routerLink]="['/players', player.id]">
     <p>{{player.fullName}}</p>
-    <img mat-card-image *ngIf="players" src="{{player.img}}" class="player">
+    <img mat-card-image *ngIf="players" src="{{player.img}}" class="player" [ngStyle.xs]="{'max-height.vw': 90}">
   </mat-card>
 </div>

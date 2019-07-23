@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <a mat-list-item routerLink="/gallery" (click)="onSidenavClose()">
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
     <mat-icon>rowing</mat-icon> <span class="nav-caption"> Išgyventojas</span>
   </a>
   <a mat-list-item routerLink="/winners" (click)="onSidenavClose()">
@@ -11,7 +11,10 @@
   <a mat-list-item routerLink="/gallery" (click)="onSidenavClose()">
     <mat-icon>photo_library</mat-icon><span class="nav-caption">Galerija</span>
   </a>
-  <a mat-list-item routerLink="#" (click)="onSidenavClose()">
+  <a mat-list-item routerLink="/players" (click)="onSidenavClose()">
+    <i class="material-icons">face</i> <span class="nav-caption"> Žaidėjai</span>
+  </a>
+  <a mat-list-item routerLink="/statistics" (click)="onSidenavClose()">
     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
       <path fill="#ffffff"
         d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
