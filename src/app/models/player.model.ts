@@ -7,4 +7,6 @@ export interface IPlayer {
     wins: number;
     yearsPlayed: string[];
     profession: string;
+    timesInFinalThree: number;
+    favoriteVotes?: number;
 }

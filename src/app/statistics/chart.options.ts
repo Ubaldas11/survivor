@@ -5,18 +5,7 @@ import { Injectable } from '@angular/core';
 export class CustomChartOptions {
   public chartOptions: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false,
-    animation: {
-      duration: 0
-    },
-    plugins: {
-      datalabels: {
-        formatter: (value, ctx) => {
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label;
-        },
-      },
-    }
+    maintainAspectRatio: true,
   };
   public chartType: ChartType = 'bar';
   public chartLegend = false;

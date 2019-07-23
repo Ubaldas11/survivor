@@ -20,6 +20,10 @@ export class StatisticsComponent implements OnInit, OnDestroy {
   public winnersChartData: number[] = [];
   public timesPlayedChartLabels: Label[] = [];
   public timesPlayedChartData: number[] = [];
+  public finalThreeChartLabels: Label[] = [];
+  public finalThreeChartData: number[] = [];
+  public favoriteVotesChartLabels: Label[] = [];
+  public favoriteVotesChartData: number[] = [];
   public stats: IStat[];
   public players: IPlayer[];
   public isLoading: boolean;
@@ -49,6 +53,12 @@ export class StatisticsComponent implements OnInit, OnDestroy {
 
     this.timesPlayedChartLabels = this.players.map((player: IPlayer) => player.fullName);
     this.timesPlayedChartData = this.players.map((player: IPlayer) => player.yearsPlayed ? player.yearsPlayed.length : 0);
+
+    this.finalThreeChartLabels = this.players.map((player: IPlayer) => player.fullName);
+    this.finalThreeChartData = this.players.map((player: IPlayer) => player.timesInFinalThree);
+
+    this.favoriteVotesChartLabels = this.players.map((player: IPlayer) => player.fullName);
+    this.favoriteVotesChartData = this.players.map((player: IPlayer) => player.favoriteVotes ? player.favoriteVotes : 0);
   }
 
   ngOnDestroy() {
