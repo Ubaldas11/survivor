@@ -22,7 +22,7 @@
       </mat-form-field>
     </form>
   </mat-card-content>
-  <button mat-raised-button color="primary" type="submit">Prisijungti</button>
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Prisijungti</button>
   <h2 *ngIf="error" class="login-error">{{ error }}</h2>
 </mat-card>
 <ng-container *ngIf="isAuthenticated">
