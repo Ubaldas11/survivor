@@ -4,5 +4,7 @@ export interface IPlayer {
     fullName: string;
     questionAnswers: Array<string>;
     birthdate: any;
+    wins: number;
+    yearsPlayed: string[];
     profession: string;
 }

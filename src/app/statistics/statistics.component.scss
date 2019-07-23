@@ -4,10 +4,19 @@
 }
 
 .stats-card {
-    width: 10vw;
+    width: 15vw;
+    height: 20vh;
     float: left;
+    margin: 2px;
 }
 
 .stats-icon {
   font-size: 50px;
+  padding: 20px;
 }
+
+.chart {
+  width: 80vw;
+  height: 500px;
+}
+

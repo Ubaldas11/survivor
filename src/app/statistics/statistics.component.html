@@ -1,19 +1,37 @@
-<div>
-  <mat-card class='stats-card' *ngFor="let item of stats">
-    <mat-card-title>{{ item.title }}</mat-card-title>
-    <mat-card-content class='stats-item'><p>
-        <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
-      {{ item.value }}
-    </p></mat-card-content>
-  </mat-card>
-  <div class="chart">
-      <canvas baseChart
-        [data]="pieChartData"
-        [labels]="pieChartLabels"
-        [chartType]="pieChartType"
-        [options]="pieChartOptions"
-        [colors]="pieChartColors"
-        [legend]="pieChartLegend">
-      </canvas>
+<div *ngIf="!isLoading">
+    <div class="chart">
+        <div>
+            <h1>Žaidimu skaičius</h1>
+              <canvas baseChart class='winners-chart'
+                [data]="timesPlayedChartData"
+                [labels]="timesPlayedChartLabels"
+                [chartType]="customOptions.chartType"
+                [options]="customOptions.chartOptions"
+                [colors]="customOptions.chartColors"
+                [legend]="customOptions.chartLegend">
+              </canvas>
+            </div>
+    </div>
+    <div class="chart">
+        <div>
+            <h1>Laimėjimai</h1>
+              <canvas baseChart class='winners-chart'
+                [data]="winnersChartData"
+                [labels]="winnersChartLabels"
+                [chartType]="customOptions.chartType"
+                [options]="customOptions.chartOptions"
+                [colors]="customOptions.chartColors"
+                [legend]="customOptions.chartLegend">
+              </canvas>
+            </div>
+    </div>
+    <div class='stats'>
+        <mat-card class='stats-card' *ngFor="let item of stats">
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-content class='stats-item'><p>
+                <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
+              {{ item.value }}
+            </p></mat-card-content>
+          </mat-card>
     </div>
 </div>

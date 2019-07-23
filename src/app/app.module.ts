@@ -30,6 +30,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthService} from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthGuard } from './guards/auth.guard';
+import { StatisticsService } from './services/statistics.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { AuthGuard } from './guards/auth.guard';
     MatInputModule,
     AngularFireAuthModule
   ],
-  providers: [FileService, AuthService],
+  providers: [FileService, AuthService, StatisticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
