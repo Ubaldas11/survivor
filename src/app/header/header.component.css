@@ -15,7 +15,7 @@ a:hover, a:active{
 
 mat-toolbar{
   border-radius: 3px;
-  font-family: 'Shojumaru', cursive;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media(max-width: 959px){
