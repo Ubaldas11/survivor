@@ -1,5 +1,5 @@
-<div *ngIf="!isLoading" class='stats-body'>
-    <div class="chart">
+<div *ngIf="!isLoading" class='stats-body' fxLayout="row wrap" fxLayout.sm="column" fxLayoutAlign.sm="center" fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutAlign="center" >
+    <div class="chart" fxFlex="45" [ngStyle.xs]="{'display': 'none'}">
         <div>
             <h1>Žaidimų skaičius</h1>
               <canvas baseChart class='winners-chart'
@@ -12,7 +12,7 @@
               </canvas>
             </div>
     </div>
-    <div class="chart">
+    <div class="chart" fxFlex="45" [ngStyle.xs]="{'display': 'none'}">
         <div>
             <h1>Pergalės</h1>
               <canvas baseChart class='winners-chart'
@@ -25,7 +25,7 @@
               </canvas>
             </div>
     </div>
-    <div class="chart">
+    <div class="chart" fxFlex="45" [ngStyle.xs]="{'display': 'none'}">
       <div>
           <h1>Finalinis trejetukas</h1>
             <canvas baseChart class='winners-chart'
@@ -38,7 +38,7 @@
             </canvas>
           </div>
     </div>
-  <div class="chart">
+  <div class="chart" fxFlex="45" [ngStyle.xs]="{'display': 'none'}">
     <div>
         <h1>Mėgstamiausio žaidėjo balsai</h1>
           <canvas baseChart class='winners-chart'
@@ -51,9 +51,9 @@
           </canvas>
         </div>
     </div>
-    <div class='stats'>
-      <mat-card class='stats-card' *ngFor="let item of stats">
-          <mat-card-title>{{ item.title }}</mat-card-title>
+    <div class='stats' fxFlex fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="strech" fxLayoutAlign="space-between center">
+      <mat-card class='stats-card' *ngFor="let item of stats" fxFlex="20" fxFlex.xs="40" [ngStyle]="{'height.vw': 18, 'margin.px': 8}" [ngStyle.sm]="{'height.vw': 24, 'margin.px': 6}" [ngStyle.xs]="{'height.vw': 30, 'margin.px': 4}">
+          <mat-card-title [ngStyle]="{'fontSize.em': 1.2}" [ngStyle.sm]="{'fontSize.em': 1}" [ngStyle.xs]="{'fontSize.em': 0.8}">{{ item.title }}</mat-card-title>
           <mat-card-content >
             <div class='stats-item'>
               <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
