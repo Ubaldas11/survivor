@@ -13,9 +13,15 @@ app.post('/', (req, res) => {
         && req.body.answer2 == answer2
         && req.body.answer3 == answer3
     ) {
-        res.send("Stai tavo hintas.")
+        res.send({
+          message: "Stai tavo hintas.",
+          success: true
+        })
     } else {
-        res.send("Kask giliau.")
+        res.send({
+          message: "Kask giliau.",
+          success: false
+        })
     }
 });
 

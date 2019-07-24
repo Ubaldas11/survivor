@@ -10,7 +10,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { MatVideoModule } from 'mat-video';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
 import { firebaseConfig } from '../environments/firebase-config';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,11 +26,11 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
 import { PlayersComponent } from './players/players.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthService} from './services/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AuthGuard } from './guards/auth.guard';
 import { StatisticsService } from './services/statistics.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +45,7 @@ import { StatisticsService } from './services/statistics.service';
     PlayerComponent,
     HintsComponent,
     StatisticsComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +68,8 @@ import { StatisticsService } from './services/statistics.service';
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
   providers: [FileService, AuthService, StatisticsService],
   bootstrap: [AppComponent]

@@ -1,10 +1,40 @@
-.container {
-    position: relative;
-    width: 100vw;
-    height: 500px;
-    text-align: center;
+mat-card {
+  min-width: 400px;
+  max-width: 500px;
+  max-height: 500px;
+  position: relative;
+  margin: 20px auto;
+}
+button {
+  width: 100%;
+  margin: 10px 0;
+  color: white;
+}
 
-    .hint {
-        margin-top: 70px;
-    }
+mat-form-field {
+  display: block ;
+  background-color: #424242;
+}
+
+.mat-form-field-infix {
+  background-color: #424242 !important;
+}
+
+@media only screen and (max-width: 450px){
+  mat-card{
+    min-width: 100px;
+    max-width: 270px;
+    max-height: 460px;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  text-align: center;
+}
+
+.hint {
+  margin-top: 70px;
 }
