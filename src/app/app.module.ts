@@ -22,6 +22,7 @@ import { FileService } from './services/file.service';
 import { WinnersComponent } from './winners/winners.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PlayerComponent } from './player/player.component';
+import { HintsComponent } from './hints/hints.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsModule } from 'ng2-charts';
 import { PlayersComponent } from './players/players.component';
@@ -41,8 +42,9 @@ import { StatisticsService } from './services/statistics.service';
     SidenavComponent,
     WinnersComponent,
     GalleryComponent,
-    PlayerComponent,
     PlayersComponent,
+    PlayerComponent,
+    HintsComponent,
     StatisticsComponent,
     LoginComponent
   ],

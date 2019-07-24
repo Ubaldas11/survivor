@@ -1,3 +1,4 @@
+import { HintsComponent } from './hints/hints.component';
 import { PlayerComponent } from './player/player.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
   { path: 'players/:playerId', component: PlayerComponent, canActivate: [AuthGuard] },
   { path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard] },
+  { path: 'hints', component: HintsComponent},
   { path: 'login' , component: LoginComponent}
 ];
 
