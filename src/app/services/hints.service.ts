@@ -3,9 +3,7 @@ import { Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {IAnswersResult} from '../hints/hints.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HintsService {
   constructor(private httpClient: HttpClient) { }
 
