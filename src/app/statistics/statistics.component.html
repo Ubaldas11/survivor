@@ -1,4 +1,4 @@
-<div *ngIf="!isLoading" class='stats-body' fxLayout="row wrap" fxLayout.sm="column" fxLayoutAlign.sm="center" fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutAlign="center" >
+<div *ngIf="!isLoading" class='stats-body' fxLayoutGap="10px" fxLayout="row wrap" fxLayout.lg="row wrap" fxLayoutAlign.lg="center" fxLayout.sm="column" fxLayoutAlign.sm="center" fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutAlign="center" >
     <div class="chart" fxFlex="45" [ngStyle.xs]="{'display': 'none'}">
         <div>
             <h1>Žaidimų skaičius</h1>
@@ -51,9 +51,9 @@
           </canvas>
         </div>
     </div>
-    <div class='stats' fxFlex fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign.xs="strech" fxLayoutAlign="space-between center">
-      <mat-card class='stats-card' *ngFor="let item of stats" fxFlex="20" fxFlex.xs="40" [ngStyle]="{'height.vw': 18, 'margin.px': 8}" [ngStyle.sm]="{'height.vw': 24, 'margin.px': 6}" [ngStyle.xs]="{'height.vw': 30, 'margin.px': 4}">
-          <mat-card-title [ngStyle]="{'fontSize.em': 1.2}" [ngStyle.sm]="{'fontSize.em': 1}" [ngStyle.xs]="{'fontSize.em': 0.8}">{{ item.title }}</mat-card-title>
+    <div class='stats' fxFlex="95" fxLayout="row wrap" fxLayout.lg="row wrap" fxLayoutAlign.lg="space-evenly center" fxLayout.xs="column" fxLayoutAlign.xs="strech" fxLayoutAlign="space-evenly center">
+      <mat-card class='stats-card' *ngFor="let item of stats" fxFlex="20" fxFlex.xs="40" [ngStyle.lg]="{'height.vw': 16, 'margin.px': 8}" [ngStyle]="{'height.vw': 18, 'margin.px': 8}" [ngStyle.sm]="{'height.vw': 26, 'margin.px': 6, 'padding.px': 10}" [ngStyle.xs]="{'height.vw': 30, 'margin.px': 4}">
+          <mat-card-title [ngStyle]="{'fontSize.em': 1.2}" [ngStyle.lg]="{'fontSize.em': 1.8}" [ngStyle.sm]="{'fontSize.em': 0.9}" [ngStyle.xs]="{'fontSize.em': 0.8}">{{ item.title }}</mat-card-title>
           <mat-card-content >
             <div class='stats-item'>
               <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
