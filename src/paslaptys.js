@@ -1,0 +1,1 @@
+const secretUrl = "/hints";

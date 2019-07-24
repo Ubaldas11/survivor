@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   public getUserInfo(): User {
-    return this.user;
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   public login(credentials: ILogin): Promise<UserCredential> {

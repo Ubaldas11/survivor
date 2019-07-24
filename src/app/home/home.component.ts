@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private afStorage: FileService) { }
 
   ngOnInit() {
+    console.log('Gera pradžia, bet teks kasti giliau.');
     this.afStorage.getVideoUrl('saySomething').subscribe(data => {
       this.videoUrl = data;
     });
