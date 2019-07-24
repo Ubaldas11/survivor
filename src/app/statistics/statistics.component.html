@@ -1,7 +1,7 @@
 <div *ngIf="!isLoading" class='stats-body'>
     <div class="chart">
         <div>
-            <h1>Žaidimu skaičius</h1>
+            <h1>Žaidimų skaičius</h1>
               <canvas baseChart class='winners-chart'
                 [data]="timesPlayedChartData"
                 [labels]="timesPlayedChartLabels"
@@ -14,7 +14,7 @@
     </div>
     <div class="chart">
         <div>
-            <h1>Laimėjimai</h1>
+            <h1>Pergalės</h1>
               <canvas baseChart class='winners-chart'
                 [data]="winnersChartData"
                 [labels]="winnersChartLabels"
@@ -40,7 +40,7 @@
     </div>
   <div class="chart">
     <div>
-        <h1>Mėgstamiausiao žaidėjo balsai</h1>
+        <h1>Mėgstamiausio žaidėjo balsai</h1>
           <canvas baseChart class='winners-chart'
             [data]="favoriteVotesChartData"
             [labels]="favoriteVotesChartLabels"
@@ -52,14 +52,14 @@
         </div>
     </div>
     <div class='stats'>
-        <mat-card class='stats-card' *ngFor="let item of stats">
-            <mat-card-title>{{ item.title }}</mat-card-title>
-            <mat-card-content >
-              <div class='stats-item'>
-                <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
-                {{ item.value }}
-              </div>
-          </mat-card-content>
-          </mat-card>
-    </div>
+      <mat-card class='stats-card' *ngFor="let item of stats">
+          <mat-card-title>{{ item.title }}</mat-card-title>
+          <mat-card-content >
+            <div class='stats-item'>
+              <mat-icon class='stats-icon' aria-hidden="false" aria-label="Example home icon">{{ item.icon }}</mat-icon>
+              {{ item.value }}
+            </div>
+        </mat-card-content>
+        </mat-card>
+  </div>
 </div>
