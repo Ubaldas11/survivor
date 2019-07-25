@@ -8,17 +8,19 @@ import { IPlayer } from '../models';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
-  players: Array<IPlayer>;
+  currentPlayers: Array<IPlayer>;
+  pastPlayers: Array<IPlayer>;
 
-  constructor(private _players: PlayersService) { }
+  constructor(private playersService: PlayersService) { }
 
   ngOnInit() {
     this.getAllPlayers();
   }
 
   private getAllPlayers() {
-    this._players.getPlayers().subscribe(players => {
-      this.players = players;
+    this.playersService.getPlayers().subscribe(players => {
+      this.currentPlayers = players.filter(x => x.current);
+      this.pastPlayers = players.filter(x => !x.current);
     });
   }
 

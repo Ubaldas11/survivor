@@ -9,4 +9,5 @@ export interface IPlayer {
     profession: string;
     timesInFinalThree: number;
     favoriteVotes?: number;
+    current: boolean;
 }
