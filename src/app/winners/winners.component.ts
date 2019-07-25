@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./winners.component.scss']
 })
 export class WinnersComponent implements OnInit {
-
+  public today = new Date();
   constructor(private _players: PlayersService) {
    }
 

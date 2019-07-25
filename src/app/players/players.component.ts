@@ -10,7 +10,8 @@ import { IPlayer } from '../models';
 export class PlayersComponent implements OnInit {
   currentPlayers: Array<IPlayer>;
   pastPlayers: Array<IPlayer>;
-
+  today: Date = new Date();
+  
   constructor(private playersService: PlayersService) { }
 
   ngOnInit() {
@@ -24,4 +25,8 @@ export class PlayersComponent implements OnInit {
     });
   }
 
+  public isBirthday(player: IPlayer) {
+      const birthDate = new Date(player.birthdate.seconds * 1000);
+      return birthDate.getDate() === this.today.getDate() && birthDate.getMonth() === this.today.getMonth();
+    }
 }

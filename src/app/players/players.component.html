@@ -3,6 +3,7 @@
   fxLayoutGap="20px" className="playerCard">
   <mat-card class="playerCard" *ngFor="let player of currentPlayers" fxFlex="30" fxFlex.sm="45" fxFlex.xs="80" [routerLink]="['/players', player.id]">
     <p>{{player.fullName}}</p>
+    <img *ngIf="isBirthday(player)" class="birthay-icon" src="https://firebasestorage.googleapis.com/v0/b/survivor-e2d68.appspot.com/o/common%2Fbirthday-icon.png?alt=media&token=b82eca58-0607-4874-b56e-1f6638b50946" />
     <img mat-card-image *ngIf="currentPlayers" src="{{player.img}}" class="player" [ngStyle.xs]="{'max-height.vw': 90}">
   </mat-card>
 </div>
@@ -11,6 +12,7 @@
   fxLayoutGap="20px" className="playerCard">
   <mat-card class="playerCard" *ngFor="let player of pastPlayers" fxFlex="30" fxFlex.sm="45" fxFlex.xs="80" [routerLink]="['/players', player.id]">
     <p>{{player.fullName}}</p>
+    <img *ngIf="isBirthday(player)" class="birthay-icon" src="https://firebasestorage.googleapis.com/v0/b/survivor-e2d68.appspot.com/o/common%2Fbirthday-icon.png?alt=media&token=b82eca58-0607-4874-b56e-1f6638b50946" />
     <img mat-card-image *ngIf="pastPlayers" src="{{player.img}}" class="player" [ngStyle.xs]="{'max-height.vw': 90}">
   </mat-card>
 </div>
