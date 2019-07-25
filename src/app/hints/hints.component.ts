@@ -16,15 +16,15 @@ export class HintsComponent implements OnInit, OnDestroy {
 
   public questions: IQuestion[] = [
     {
-      questionText: 'Klausimas 1',
+      questionText: 'Kuriame "Išlikimo" sezone panaudotas pirmas neliečiamybės stabukas?',
       answerId: 'answer1'
     },
     {
-      questionText: 'Klausimas 2',
+      questionText: 'Vienintelis lietuvis, laimėjęs "Robinzonus"?',
       answerId: 'answer2'
     },
     {
-      questionText: 'Klausimas 3',
+      questionText: 'Kiek ąžuolų auga Mančiagirėje netoli upės, didelėje ąžuolų grupėje?',
       answerId: 'answer3'
     },
   ];

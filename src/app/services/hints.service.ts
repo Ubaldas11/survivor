@@ -8,7 +8,6 @@ export class HintsService {
   constructor(private httpClient: HttpClient) { }
 
   public sendAnswers(answers: any): Observable<IAnswersResult> {
-    console.log(answers);
     return this.httpClient.post<IAnswersResult>('https://us-central1-survivor-e2d68.cloudfunctions.net/hints', answers);
   }
 }

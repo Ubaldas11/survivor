@@ -2,19 +2,22 @@ const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
 
-const answer1 = 'test1';
-const answer2 = 'test2';
-const answer3 = 'test3';
+const question1Answers = ['survivor:guatemala', 'guatemala', 'išlikimas:gvatemala', 'gvatemala', 'S11'];
+const question2Answers = ['rimasvaleikis'];
+const question3Answers = ['13', 'trylika']
 const app = express();
 app.use(cors({ origin: true }));
 app.post('/', (req, res) => {
+    var answer1 = prepareAnswer(req.body.answer1);
+    var answer2 = prepareAnswer(req.body.answer2);
+    var answer3 = prepareAnswer(req.body.answer3);
     if(
-        req.body.answer1 == answer1
-        && req.body.answer2 == answer2
-        && req.body.answer3 == answer3
+        checkAnswer(answer1, question1Answers) &&
+        checkAnswer(answer2, question2Answers) &&
+        checkAnswer(answer3, question3Answers)
     ) {
         res.send({
-          message: "Stai tavo hintas.",
+          message: "Štai tavo hintas.",
           success: true
         })
     } else {
@@ -24,5 +27,13 @@ app.post('/', (req, res) => {
         })
     }
 });
+
+function prepareAnswer(input) {
+  return input.replace(/ +/g, "").toLowerCase();
+}
+
+function checkAnswer(answer, correctAnswers) {
+  return correctAnswers.indexOf(answer) >= 0;
+}
 
 exports.hints = functions.https.onRequest(app);
