@@ -1,0 +1,9 @@
+.imgbox {
+  display: grid;
+  height: 100%;
+}
+.center-fit {
+  max-width: 80%;
+  max-height: 80vh;
+  margin: auto;
+}
