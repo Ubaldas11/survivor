@@ -16,15 +16,15 @@ export class AppComponent implements OnInit, OnDestroy {
   private destroy: Subject<void> = new Subject<void>();
 
   constructor(private authService: AuthService, private router: Router) {
-    this.router.events.subscribe(event => {
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         ga('set', 'page', event.urlAfterRedirects);
         ga('send', 'pageview');
       }
     });
-  }
-
-  ngOnInit(): void {
     this.isAuthenticated = this.authService.isAuthenticated();
     this.authService.authStatusChanged.pipe(
       takeUntil(this.destroy)
