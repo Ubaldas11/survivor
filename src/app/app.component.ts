@@ -3,7 +3,7 @@ import {AuthService} from './services/auth.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {NavigationEnd, Router} from '@angular/router';
-import {TagManagerService} from './services/tag-manager.service';
+declare var ga: Function;
 
 @Component({
   selector: 'app-root',
@@ -15,8 +15,13 @@ export class AppComponent implements OnInit, OnDestroy {
   public isAuthenticated: boolean;
   private destroy: Subject<void> = new Subject<void>();
 
-  constructor(private authService: AuthService, private router: Router, private tagManagerService: TagManagerService) {
-    this.tagManagerService.initialize();
+  constructor(private authService: AuthService, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
+      }
+    });
   }
 
   ngOnInit(): void {
