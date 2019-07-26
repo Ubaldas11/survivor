@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from './services/auth.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {NavigationEnd, Router} from '@angular/router';
+import {TagManagerService} from './services/tag-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,9 @@ export class AppComponent implements OnInit, OnDestroy {
   public isAuthenticated: boolean;
   private destroy: Subject<void> = new Subject<void>();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router, private tagManagerService: TagManagerService) {
+    this.tagManagerService.initialize();
+  }
 
   ngOnInit(): void {
     this.isAuthenticated = this.authService.isAuthenticated();

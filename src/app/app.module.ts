@@ -31,6 +31,7 @@ import { AuthService } from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { StatisticsService } from './services/statistics.service';
 import { HttpClientModule } from '@angular/common/http';
+import {TagManagerService} from './services/tag-manager.service';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule,
     HttpClientModule
   ],
-  providers: [FileService, AuthService, StatisticsService],
+  providers: [FileService, AuthService, StatisticsService, TagManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
